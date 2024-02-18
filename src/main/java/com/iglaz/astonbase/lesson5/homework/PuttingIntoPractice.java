@@ -67,13 +67,13 @@ public class PuttingIntoPractice {
         Integer max = transactions.stream()
                 .map(Transaction::getValue)
                 .max(Integer::compareTo)
-                .get();
+                .orElse(null);
         System.out.println(max);
 
         //8. Найти транзакцию с минимальной суммой.
                 Transaction min = transactions.stream()
                 .min(Comparator.comparingInt(Transaction::getValue))
-                .get();
+                .orElse(null);
         System.out.println(min);
     }
 }
